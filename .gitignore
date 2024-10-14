@@ -5,4 +5,4 @@
 .terraform.lock.hcl
 mykey
 mykey.pub
-vars.tf
+
