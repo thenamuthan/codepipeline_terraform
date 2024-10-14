@@ -1,0 +1,8 @@
+#creating ignore files
+*.tfstate
+*.tfstate.*
+**/.terraform/*
+.terraform.lock.hcl
+mykey
+mykey.pub
+vars.tf
