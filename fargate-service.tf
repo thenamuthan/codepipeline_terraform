@@ -47,7 +47,7 @@ DEFINITION
 resource "aws_ecs_service" "demo" {
   name            = "demo"
   cluster         = aws_ecs_cluster.demo.id
-  desired_count   = 2
+  desired_count   = 1
   task_definition = aws_ecs_task_definition.demo.arn
   launch_type     = "FARGATE"
   depends_on      = [aws_lb_listener.demo]

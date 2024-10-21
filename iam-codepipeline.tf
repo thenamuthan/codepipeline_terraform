@@ -61,13 +61,34 @@ data "aws_iam_policy_document" "demo-codepipeline-role-policy" {
       aws_kms_key.demo-artifacts.arn,
     ]
   }
-  statement {
-    effect  = "Allow"
-    actions = ["*"]
+    statement {
+    effect = "Allow"
+    actions = [
+      "codecommit:UploadArchive",
+      "codecommit:Get*",
+      "codecommit:BatchGet*",
+      "codecommit:Describe*",
+      "codecommit:BatchDescribe*",
+      "codecommit:GitPull",
+      "Github:*",
+      ]
     resources = [
-      "*",
+      "*"
     ]
   }
+  statement {
+      effect = "Allow"
+      actions =  [
+        "codestar-connections:PassConnection",
+        "codestar-connections:PullConnection",
+        "codestar-connections:UseConnection",
+        "codestar-connections:UntagResource",
+        "codestar-connections:TagResource",
+      ]
+        resources= ["arn:aws:codestar-connections:us-east-2:905418016855:connection/95b30d43-0019-4416-9d6f-457582dd299a",]
+    }
+
+
   statement {
     effect = "Allow"
     actions = [
@@ -100,4 +121,3 @@ resource "aws_iam_role_policy" "demo-codepipeline" {
   role   = aws_iam_role.demo-codepipeline.id
   policy = data.aws_iam_policy_document.demo-codepipeline-role-policy.json
 }
-

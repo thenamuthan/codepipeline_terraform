@@ -20,7 +20,7 @@ resource "aws_codepipeline" "demo" {
       output_artifacts = ["demo-docker-source"]
       configuration = {
         ConnectionArn    = aws_codestarconnections_connection.codestar_connection_example.arn
-        FullRepositoryId = "https://github.com/thenamuthan/repo"
+        FullRepositoryId = "thenamuthan/repo"
         BranchName       = "main"
         #OAuthToken = var.GITHUB_TOKEN
       }

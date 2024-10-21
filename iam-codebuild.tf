@@ -111,7 +111,7 @@ resource "aws_iam_role_policy" "demo-codebuild" {
       "Resource": [
         "*"
       ]
-    }, 
+    },
     {
       "Sid": "ECS",
       "Effect": "Allow",
@@ -122,7 +122,7 @@ resource "aws_iam_role_policy" "demo-codebuild" {
       "Resource": [
         "*"
       ]
-    }, 
+    },
     {
       "Effect": "Allow",
       "Action": [
