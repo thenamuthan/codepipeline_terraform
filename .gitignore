@@ -5,5 +5,5 @@
 .terraform.lock.hcl
 mykey
 mykey.pub
-*codedeploy.tf
+ecr.tf
 test.txt
