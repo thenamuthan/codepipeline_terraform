@@ -5,5 +5,4 @@
 .terraform.lock.hcl
 mykey
 mykey.pub
-ecr.tf
-test.txt
+
